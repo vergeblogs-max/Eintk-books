@@ -1,0 +1,88 @@
+# PROJECT "AETHER CORE": THE GUIDED LEARNING ENGINE
+
+## 1. Vision & Core Objective
+EINTK is pivoting from a passive digital library to an active, structured AI Tutor. The goal is to eliminate decision fatigue for Nigerian students by replacing the open "Books" library with a mandatory, time-bound "Daily Mission" path. No user shall access study materials without a generated plan.
+
+---
+
+## 2. Phase 1: Data Architecture & Minimal Onboarding
+**Goal:** Speed up user entry and establish the schema for scheduling.
+
+### A. Data Schema (types.ts)
+Update `UserData` to include the `studyPlan` object:
+- `type`: 'jamb_pulse' | 'waec_zenith' | 'nexus' | 'omni'
+- `startDate`: Timestamp
+- `endDate`: Timestamp (Exam Date)
+- `intensity`: number (1, 2, or 3 subjects per day)
+- `excludeWeekends`: boolean
+- `generatedSchedule`: { [date: string]: string[] } // Map of YYYY-MM-DD to Array of Book IDs
+
+### B. Single-Page Onboarding (AuthPage.tsx)
+- Collapse the multi-step signup into a single high-energy form.
+- Fields: Username, Email, Password, State, Department, Invitation Code.
+- Remove "Subjects of Interest" selection from Auth (moved to Aether Setup).
+
+### C. The Scheduler Engine (services/schedulerService.ts - NEW)
+- Create an algorithm that calculates: (Total Books in chosen subjects) / (Available Study Days).
+- Output: A JSON object mapping every valid study date to specific Book IDs.
+
+---
+
+## 3. Phase 2: The Mandatory Gatekeeper
+**Goal:** Force plan creation and provide management tools.
+
+### A. Aether Setup Page (pages/AetherSetupPage.tsx - NEW)
+- Intermediate screen after login/verification.
+- **Plan Selection:**
+    1. JAMB Pulse (4 Subjects)
+    2. WAEC Zenith (9 Subjects)
+    3. The Nexus (Combined 9+)
+    4. Omniscience (Custom count)
+- **Parameters:** User selects their Exam Date and Intensity.
+- **Generation:** On "Forge Plan", call `schedulerService` and save to Firestore.
+
+### B. Routing Gatekeeper (App.tsx)
+- Implementation: `if (user && userData && !userData.studyPlan) navigate('/aether-setup')`.
+- This ensures users cannot skip to the library without a mission.
+
+### C. Plan Management (ProfilePage.tsx)
+- Add "Aether Plan Settings" card.
+- Displays: Current Plan type, Target Date, Progress %.
+- **Recalibrate Button:** Clears `userData.studyPlan` and redirects to Setup for a fresh start.
+
+---
+
+## 4. Phase 3: Mission Control & Priority Sync
+**Goal:** Connect the schedule to the UI and ensure offline readiness.
+
+### A. Library Transformation (LibraryPage.tsx)
+- **Rename:** "Books" tab is renamed to "Daily Mission" in UI and code.
+- **Search Removal:** Delete the Search Bar and Filter UI from the Mission tab.
+- **The Mission Path:**
+    - Look up `userData.studyPlan.generatedSchedule[today]`.
+    - Display assigned books in a vertical "Path" (vertical list).
+    - Design remains consistent with existing book cards.
+- **Integration:** Completing a book in "Missions" automatically triggers the checkmark in the "Syllabus" tab.
+
+### B. The Silent Forge (services/syncQueue.ts)
+- Update `startVitalSync` to prioritize `generatedSchedule`.
+- Download "Complete" (Pro) versions of books assigned for the current day and the next 2 days immediately (Trial Experience).
+- Background sync continues for the rest of the plan in the "Ghost Sync" phase.
+
+---
+
+## 5. Technical Requirements & Integrity
+- **Design Shape:** Maintain the existing Tailwind/Lucide UI patterns. 
+- **Modular Stability:** Phase 1 and 2 must allow the app to function even if Phase 3 is delayed.
+- **Offline Reliability:** Prioritize IndexedDB storage for all "Mission" books.
+
+## 6. Target Files for Update
+1. types.ts (Interface)
+2. services/authService.ts (Signup logic)
+3. services/schedulerService.ts (NEW: Logic)
+4. pages/AuthPage.tsx (UI Collapse)
+5. pages/AetherSetupPage.tsx (NEW: Setup UI)
+6. App.tsx (Gatekeeper Redirects)
+7. pages/ProfilePage.tsx (Plan Settings)
+8. pages/LibraryPage.tsx (Missions UI, Search Removal)
+9. services/syncQueue.ts (Priority Sync update)

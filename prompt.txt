@@ -1,0 +1,55 @@
+Act as a Senior Frontend Engineer.
+
+I need you to build a **secondary utility website** called "EINTK Render Engine".
+This app acts as a "Worker" or "Microservice" for my main application. Its job is to listen to a Firestore database for image generation tasks, process them using a **fresh Gemini API Key**, and save the results back to Firestore.
+
+**Context:**
+My main app has run out of API quota. This Render Engine will run on a separate device/tab using a different Google Cloud account to handle image generation requests from the main app.
+
+**Technical Stack:** React, Vite, Tailwind CSS, Firebase (v9 Modular SDK), Google GenAI SDK (`@google/genai`).
+
+### 1. Configuration
+**A. Firebase Config (SAME AS MAIN APP):**
+Connect to the *existing* database:
+```javascript
+const firebaseConfig = {
+  apiKey: "AIzaSyCcnwGHLlfRgDcICbvAHyfULvdqkVmgTbc",
+  authDomain: "eintk-ebooks.firebaseapp.com",
+  projectId: "eintk-ebooks",
+  storageBucket: "eintk-ebooks.firebasestorage.app",
+  messagingSenderId: "117143266275",
+  appId: "1:117143266275:web:62d1baba71501cc202f6d6",
+  measurementId: "G-D1Q63BRRRC"
+};
+```
+
+**B. API Keys (NEW ACCOUNT):**
+*   **Gemini API:** (Ask the user to provide a NEW, fresh API Key here in the code).
+*   **ImgBB API:** `5d929b5947e2b8f1717f8f5cdd8e8964`
+
+### 2. Core Logic (The Worker Loop)
+
+**UI:**
+*   A simple dashboard.
+*   **Status Indicator:** "Listening for jobs..." (Green dot) or "Processing..." (Yellow dot).
+*   **Log:** A scrolling list showing recent tasks: "Generated image for [Prompt...]" or "Error: [Message]".
+*   **Toggle:** A "Start/Stop Engine" button.
+
+**Backend Logic (Client-Side):**
+1.  **Listen:** When started, set up a Firestore `onSnapshot` listener on the collection `image_queue`.
+    *   Query: `where('status', '==', 'pending')`.
+2.  **Process:** When a new document appears:
+    *   Extract `prompt`, `model` ('imagen-4.0-generate-001' or 'gemini-2.5-flash-image'), and `aspectRatio`.
+    *   **Mark as Processing:** Update the doc to `status: 'processing'`.
+    *   **Generate:** Call Google GenAI SDK with the *New API Key*.
+    *   **Upload:** Upload the resulting base64/binary to **ImgBB**.
+    *   **Finish:** Update the Firestore doc with:
+        *   `imageUrl`: (The ImgBB URL)
+        *   `status`: 'completed'
+        *   `completedAt`: serverTimestamp()
+3.  **Error Handling:** If generation fails, update doc with `status: 'error'` and `errorMessage`.
+
+### 3. Implementation Instructions
+*   Create `firebase.ts`, `App.tsx`, and `services.ts`.
+*   Ensure the app prevents the browser tab from sleeping (e.g., using a wake lock or playing a silent audio loop if necessary, or just a simple UI instruction "Keep this tab open").
+*   This app does NOT need authentication. It just needs to write to the database.

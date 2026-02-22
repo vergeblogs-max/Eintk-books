@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Primary SEO -->
+    <title>EINTK | The Ultimate Student Companion</title>
+    <meta name="description" content="EINTK - Just everything you need to know. The all-in-one educational platform for Nigerian students. Master JAMB, WAEC, and NECO with AI-powered textbooks, realistic CBT practice exams, study decks, educational games, and a vibrant student community." />
+    <meta name="keywords" content="EINTK, Everything You Need To Know, E I N T K, Just everything you need to know, Nigeria Education, WAEC past questions, JAMB CBT practice, NECO revision, Senior Secondary School, SS1 SS2 SS3 notes, AI Tutor, E-learning Nigeria, Online Textbooks, Exam Preparation, Student Community, Study Hacks, Digital Library, Educational Games, Academic Success, University Admission, Post-UTME, GCE, NABTEB, Science Subjects, Arts Subjects, Commercial Subjects, Physics textbook, Chemistry notes, Biology revision, Mathematics solutions, English Language tutorial, Literature summaries, Government notes, Economics textbook, Financial Accounting, Civic Education, Data Processing, Office Practice, Agricultural Science, Home Management, Visual Arts, Yoruba, Igbo, Hausa, French for students, Online classroom, Study planner, Gamified learning, Leaderboard, Academic badges, Scholarship preparation, Nigerian curriculum, Exam revision app, School portal, Constrix Studio" />
+    <meta name="author" content="Constrix Studio" />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="Wq8bGA9Arks9A2RTOAFll6RAFwlR1Rkp1MVd2ZZJB3E" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.eintk.com.ng/" />
+    <meta property="og:title" content="EINTK | The Ultimate Student Companion" />
+    <meta property="og:description" content="EINTK - Just everything you need to know. Access AI-powered books, realistic CBT exams, and join thousands of students mastering their future." />
+    <meta property="og:image" content="https://i.ibb.co/8gh3Q7Cd/Google-AI-Studio-2025-11-06-T13-09-43-299-Z.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.eintk.com.ng/" />
+    <meta property="twitter:title" content="EINTK | The Ultimate Student Companion" />
+    <meta property="twitter:description" content="EINTK - Just everything you need to know. Pass your exams with confidence using our digital library and CBT tools." />
+    <meta property="twitter:image" content="https://i.ibb.co/8gh3Q7Cd/Google-AI-Studio-2025-11-06-T13-09-43-299-Z.png" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/8gh3Q7Cd/Google-AI-Studio-2025-11-06-T13-09-43-299-Z.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="https://i.ibb.co/v6Mf9F37/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="https://i.ibb.co/HRx7T4z/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/xqR9J0rm/apple-touch-icon.png">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#111827">
+    
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.5",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.5.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.552.0",
+    "uuid": "https://aistudiocdn.com/uuid@^13.0.0",
+    "firebase-admin": "https://aistudiocdn.com/firebase-admin@^13.6.0",
+    "@vercel/node": "https://aistudiocdn.com/@vercel/node@^5.5.7",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "idb": "https://esm.sh/idb@^8.0.3"
+  }
+}
+</script>
+<script>
+  // Capture PWA install prompt early
+  window.deferredInstallPrompt = null;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    window.deferredInstallPrompt = e;
+  });
+
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      packages: {'[+]': ['mhchem', 'boldsymbol', 'ams']}
+    },
+    chtml: {
+      scale: 1
+    },
+    svg: {
+      scale: 1
+    },
+    startup: {
+      typeset: false 
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          let refreshing = false;
+          
+          // Detect when a new service worker takes over and refresh the page
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (refreshing) return;
+            window.location.reload();
+            refreshing = true;
+          });
+
+          // Use a relative path to the same origin to avoid registration errors in sandboxed environments
+          const swPath = './service-worker.js';
+          
+          navigator.serviceWorker.register(swPath).then(reg => {
+            // Check for updates every hour
+            setInterval(() => {
+              reg.update();
+            }, 60 * 60 * 1000);
+
+            reg.onupdatefound = () => {
+              const newWorker = reg.installing;
+              if (newWorker) {
+                newWorker.onstatechange = () => {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    // New update available, skip waiting and let controllerchange reload
+                    newWorker.postMessage({ type: 'SKIP_WAITING' });
+                  }
+                };
+              }
+            };
+          }).catch(err => {
+            console.warn('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

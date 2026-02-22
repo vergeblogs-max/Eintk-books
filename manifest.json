@@ -1,0 +1,32 @@
+
+{
+  "short_name": "EINTK",
+  "name": "EINTK",
+  "description": "A subscription-based learning platform with high-quality educational ebooks, exam prep materials, and a vibrant student community.",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/v6Mf9F37/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.ibb.co/HRx7T4z/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#111827",
+  "background_color": "#111827",
+  "dir": "auto",
+  "lang": "en",
+  "orientation": "portrait",
+  "categories": [
+    "books",
+    "education",
+    "social"
+  ]
+}

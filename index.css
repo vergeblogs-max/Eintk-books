@@ -1,0 +1,233 @@
+html {
+  font-size: 13px;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #111827; /* gray-900 */
+  color: #f3f4f6; /* gray-100 */
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- PREMIUM MICRO-INTERACTIONS --- */
+button, [role="button"], .interactive-element {
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease, opacity 0.2s ease;
+}
+
+button:active, [role="button"]:active {
+  transform: scale(0.96);
+}
+
+img {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Smooth Image Fade-in */
+img:not([src]) {
+  opacity: 0;
+}
+
+img[src] {
+  opacity: 1;
+}
+
+/* --- SKELETON SHIMMER ANIMATION --- */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #1f2937 25%, #374151 50%, #1f2937 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* --- EBOOK CONTENT FORMATTING --- */
+.ebook-content {
+  color: #f3f4f6; /* gray-100 (white) */
+  line-height: 1.8;
+}
+
+.ebook-content p {
+  margin-bottom: 1.5rem;
+}
+
+.ebook-content strong, 
+.ebook-content b, 
+.ebook-content h1, 
+.ebook-content h2, 
+.ebook-content h3, 
+.ebook-content h4, 
+.ebook-content h5, 
+.ebook-content h6 {
+  color: #ea580c; /* orange-600 */
+  font-weight: 800;
+  text-align: left;
+}
+
+.ebook-content h1 { font-size: 2.1rem; margin-top: 2rem; margin-bottom: 1rem; }
+.ebook-content h2 { font-size: 1.7rem; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+.ebook-content h3 { font-size: 1.4rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+
+.ebook-content ul, .ebook-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.ebook-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* --- MATHJAX ERROR SUPPRESSION --- */
+mjx-merror, .mjx-error {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* --- MATHJAX LAYOUT FIX --- */
+.ebook-content mjx-container {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  max-width: 100% !important;
+  display: inline-block !important; 
+  vertical-align: middle;
+  padding: 4px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.ebook-content mjx-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #4b5563; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280; 
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Starry/Nebula/Sunset Backgrounds */
+@keyframes starryMove {
+  from { background-position: 0 0; }
+  to { background-position: 550px 550px; }
+}
+.bg-starry {
+  background-color: #000;
+  background-image:
+      radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+      radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px);
+  background-size: 550px 550px, 350px 350px;
+  animation: starryMove 120s linear infinite;
+}
+
+@keyframes nebulaPulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.bg-nebula {
+  background: linear-gradient(45deg, #1a0b2e, #3b0d34, #141e30);
+  background-size: 300% 300%;
+  animation: nebulaPulse 20s ease infinite;
+}
+
+/* --- SETUP PAGE ANIMATIONS --- */
+@keyframes floatIcon {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  20% { opacity: 0.4; }
+  80% { opacity: 0.4; }
+  100% { transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(360deg); opacity: 0; }
+}
+
+.animate-float-icon {
+  animation: floatIcon var(--float-duration) linear infinite;
+  animation-delay: var(--float-delay);
+}
+
+@keyframes spin-slow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+/* --- FLASHCARD 3D FLIP SYSTEM --- */
+.flashcard-container {
+  perspective: 2000px;
+  width: 100%;
+}
+
+.flashcard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flashcard.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.flashcard-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}

@@ -1,0 +1,184 @@
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // --- HELPER FUNCTIONS ---
+    
+    // Check if user is logged in
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Check if the user is a Central Admin
+    // Note: This requires a read to the users collection.
+    function isAdmin() {
+      return isAuthenticated() && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'central admin';
+    }
+
+    // Check if the user accessing the data is the owner of that data
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // --- 1. USER DATA & AUTHENTICATION ---
+    // Critical for: Profile, Points, Leaderboard, Admin Granting Pro, Payment Verification
+    match /users/{userId} {
+      // Allow any authenticated user to read users (Required for Leaderboards & Battle User Search)
+      allow read: if isAuthenticated();
+      
+      // Allow user to create their own profile
+      allow create: if isOwner(userId);
+      
+      // Update Logic:
+      // 1. Owner can update their own data (Profile pics, Interests, Subscription status after payment)
+      // 2. Admin can update ANY user (Required for 'Grant Pro Access' button in Moderator Page)
+      // 3. REFERRAL SYSTEM: Allow authenticated users to update referral stats of others (e.g., claiming a code)
+      allow update: if isOwner(userId) || isAdmin() || (
+        isAuthenticated() && 
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['referralCount', 'proExpiryDate', 'trialExpiryDate', 'subscriptionStatus', 'sparks'])
+      );
+      
+      // Only Admin can delete a user (Moderator Page)
+      allow delete: if isAdmin();
+      
+      // Journal Subcollection
+      match /journal/{entryId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // --- 2. PAYMENT TOKENS ---
+    // Critical for: /upgrade page and verifying payments
+    match /payment_tokens/{tokenId} {
+      // User creates a token when clicking "Upgrade"
+      allow create: if isAuthenticated();
+      // User reads/deletes their own token during verification
+      allow read, update, delete: if isOwner(resource.data.userId);
+    }
+
+    // --- 3. PUBLISHED CONTENT (Books, Exams, Videos) ---
+    match /published_ebooks/{ebookId} {
+      // Public read access for Library/Explore
+      allow read: if true;
+      
+      // Admin can do anything
+      allow create, delete: if isAdmin();
+      
+      // UPDATE RULES (Crucial for Ratings & Read Counts):
+      // Users must be able to update 'totalReads', 'averageRating', and 'ratingCount'
+      // when they finish a book or submit a review.
+      allow update: if isAdmin() || (
+        isAuthenticated() && (
+          request.resource.data.diff(resource.data).affectedKeys().hasAny(['totalReads', 'averageRating', 'ratingCount'])
+        )
+      );
+
+      // REVIEWS Subcollection
+      // Critical for: Posting reviews/ratings on EbookReaderPage
+      match /reviews/{reviewId} {
+        allow read: if true;
+        allow create: if isAuthenticated();
+        // Users can edit/delete their own reviews, Admins can moderate
+        allow update, delete: if (isAuthenticated() && request.auth.uid == resource.data.userId) || isAdmin();
+      }
+    }
+
+    match /published_exam_qsts/{examId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /published_videos/{videoId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    // --- 4. ADMIN & CONTENT CREATION ---
+    match /drafts/{draftId} {
+      allow read, write: if isAdmin();
+    }
+    
+    match /announcements/{announcementId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /settings/{settingId} {
+      allow read: if true; // Needed for Maintenance Mode check & Exam Dates
+      allow write: if isAdmin();
+    }
+    
+    match /contact_submissions/{submissionId} {
+      // Anyone can create a contact request (even logged out)
+      allow create: if true;
+      // Only admin can view/delete inbox
+      allow read, delete: if isAdmin();
+    }
+
+    // --- 5. GAME & ARCADE ---
+    match /game_levels/{levelId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    // --- 6. COMMUNITY & SOCIAL ---
+    match /community_questions/{questionId} {
+      allow read: if true;
+      allow create: if isAuthenticated();
+      
+      // Allow Auth users to update (for Likes, Poll Votes, Comment Counts)
+      allow update: if isAuthenticated();
+      
+      // Delete: Author or Admin
+      allow delete: if isAuthenticated() && (
+        resource.data.authorId == request.auth.uid || 
+        isAdmin()
+      );
+
+      // Comments/Answers
+      match /answers/{answerId} {
+        allow read: if true;
+        allow create: if isAuthenticated();
+      }
+      
+      // Quiz Attempts
+      match /attempts/{userId} {
+        allow read, write: if isAuthenticated();
+      }
+    }
+
+    // --- 7. DEBATES ---
+    match /debates/{weekId} {
+      allow read: if true;
+      // Users write to add their vote to the arrays/counters
+      allow write: if isAuthenticated();
+    }
+
+    // --- 8. BATTLES ---
+    match /battle_requests/{requestId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated(); // Accept/Reject
+    }
+    
+    match /battles/{battleId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated(); // Update scores, turn status
+      allow delete: if isAuthenticated(); // Cancel lobby
+    }
+
+    // --- 9. UTILITIES ---
+    match /image_queue/{taskId} {
+      // Used by Admin Page for generation
+      allow read, write: if isAuthenticated();
+    }
+    
+    match /notifications/{notificationId} {
+      allow read: if isOwner(resource.data.userId);
+      allow write: if isAdmin();
+    }
+  }
+}

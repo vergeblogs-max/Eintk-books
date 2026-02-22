@@ -1,0 +1,161 @@
+
+--------------------------------------------------------------------------------
+VIDEO 1: THE "LAZY" STUDENT (AI READING TOOLS)
+--------------------------------------------------------------------------------
+GOAL: Highlight the Ebook Reader, AI Simplification, and Auto-Scroll.
+HOOK: "Stop reading boring textbooks."
+
+--- SCRIPT TABLE ---
+
+[VISUALS / SCREEN RECORDING]                                      [AI VOICEOVER]
+(Show a dense, boring PDF or textbook page briefly)               Stop reading boring textbooks.
+(Switch to EINTK Ebook Reader Page)                                Seriously.
+(Highlight a difficult paragraph on the screen)                   This web app, EINTK, reads for you.
+(Click the "Summarize" button in the popup menu)                  Highlight any confusing paragraph...
+(Show the AI result popping up with a simple explanation)         ...and boom. The AI simplifies it instantly.
+(Emoji: 🤯 Mind Blown sticker)                                    
+(Click the "Play" button for Text-to-Speech)                      It even speaks to you if you're tired of looking at screens.
+(Toggle "Auto-Scroll" from the settings menu)                     Too lazy to scroll? Turn on Auto-Scroll.
+(Show text moving smoothly on its own)                            It’s studying on autopilot.
+(Show "Upgrade to Pro" banner briefly, then Library)              Read smarter, not harder.
+(Text Overlay: CLICK LINK IN BIO)                                 Click the link below to start.
+
+--- VOICEOVER ONLY (COPY PASTE) ---
+Stop reading boring textbooks. Seriously. This web app, EINTK, reads for you. Highlight any confusing paragraph, and boom. The AI simplifies it instantly. It even speaks to you if you're tired of looking at screens. Too lazy to scroll? Turn on Auto-Scroll. It’s studying on autopilot. Read smarter, not harder. Click the link below to start.
+
+
+--------------------------------------------------------------------------------
+VIDEO 2: EXAM PANIC (CBT & TEST PREP)
+--------------------------------------------------------------------------------
+GOAL: Highlight Test Prep, CBT Mode, and Instant Grading.
+HOOK: "JAMB is coming. Are you shaking?"
+
+--- SCRIPT TABLE ---
+
+[VISUALS / SCREEN RECORDING]                                      [AI VOICEOVER]
+(Show the "Exams" page with the countdown timer ticking)          JAMB is coming. Are you shaking?
+(Emoji: 😨 Scared Face)                                           
+(Click "Test Prep" -> Select "Physics" -> "CBT Mode")             Don't panic. Practice.
+(Show the Exam Interface with the Timer running at top)           Use EINTK's CBT mode to simulate the real thing.
+(Rapidly click through 3 questions: A, C, B)                      Set your time. Pick your subject.
+(Pause on a difficult question, open Calculator Modal)             Stuck on a calculation? Use the built-in scientific calculator.
+(Click "Submit Exam")                                             Done? Submit it.
+(Show "Student Report Card" with a high score/Grade A)            Get your results and corrections instantly.
+(Zoom into the "Strongest Subject" stat)                          Stop guessing. Know your grade before the exam day.
+(Text Overlay: VISIT EINTK.VERCEL.APP)                            Visit the website now.
+
+--- VOICEOVER ONLY (COPY PASTE) ---
+JAMB is coming. Are you shaking? Don't panic. Practice. Use EINTK's CBT mode to simulate the real thing. Set your time. Pick your subject. Stuck on a calculation? Use the built-in scientific calculator. Done? Submit it. Get your results and corrections instantly. Stop guessing. Know your grade before the exam day. Visit the website now.
+
+
+--------------------------------------------------------------------------------
+VIDEO 3: PVP ACADEMIC WARFARE (BATTLE ARENA)
+--------------------------------------------------------------------------------
+GOAL: Highlight the Battle Arena, Multiplayer, and Sabotage Mode.
+HOOK: "Prove you're smarter than your best friend."
+
+--- SCRIPT TABLE ---
+
+[VISUALS / SCREEN RECORDING]                                      [AI VOICEOVER]
+(Show "Community" Page -> Click "Battle Arena")                   Prove you're smarter than your best friend.
+(Click "Create Duel")                                             Don't just say it. Show it.
+(Select "Sabotage Twist" mode)                                    Go to the Battle Arena on EINTK.
+(Show the "Copy Invite Link" button being clicked)                Create a room and send the link.
+(Show split screen or gameplay: Answering a question correctly)   It’s live. It’s intense.
+(Show "Sabotage Alert: You stole 50 points!" notification)        And if you choose Sabotage Mode...
+(Emoji: 😈 Devil Smile)                                           ...you can literally steal their points when they fail.
+(Show "VICTORY" screen with points added)                         Embarrass them and climb the leaderboard.
+(Text Overlay: CHALLENGE YOUR FRIENDS)                            Click the link below to start a duel.
+
+--- VOICEOVER ONLY (COPY PASTE) ---
+Prove you're smarter than your best friend. Don't just say it. Show it. Go to the Battle Arena on EINTK. Create a room and send the link. It’s live. It’s intense. And if you choose Sabotage Mode... you can literally steal their points when they fail. Embarrass them and climb the leaderboard. Click the link below to start a duel.
+
+
+--------------------------------------------------------------------------------
+VIDEO 4: THE CHEAT CODE (TOOLS & FORMULAS)
+--------------------------------------------------------------------------------
+GOAL: Highlight the Tools Page, Formula Vault, and Dictionary.
+HOOK: "The secret tool A1 students aren't telling you."
+
+--- SCRIPT TABLE ---
+
+[VISUALS / SCREEN RECORDING]                                      [AI VOICEOVER]
+(Show "Tools" page icon being clicked)                            The secret tool A1 students aren't telling you.
+(Scroll through "Formula Vault" showing Math equations)           Stop memorizing everything.
+(Type "Quadratic" in the search bar, show result)                 The EINTK Formula Vault has every formula you need.
+(Switch tab to "Periodic Table")                                  Math. Physics. Chemistry.
+(Click an Element to show detailed modal)                         Even a full interactive Periodic Table.
+(Switch to "Dictionary" tab, search "Osmosis")                    Don't know a word? Use the built-in Dictionary.
+(Show definition and "Play Audio" button click)                   It’s like having a library in your pocket.
+(Text Overlay: GET THE TOOLS)                                     Get the cheat code. Click the link below.
+
+--- VOICEOVER ONLY (COPY PASTE) ---
+The secret tool A1 students aren't telling you. Stop memorizing everything. The EINTK Formula Vault has every formula you need. Math. Physics. Chemistry. Even a full interactive Periodic Table. Don't know a word? Use the built-in Dictionary. It’s like having a library in your pocket. Get the cheat code. Click the link below.
+
+
+--------------------------------------------------------------------------------
+VIDEO 5: CONFUSED ABOUT WHAT TO READ? (SYLLABUS TRACKER)
+--------------------------------------------------------------------------------
+GOAL: Highlight the Syllabus Tracker in the Library.
+HOOK: "Do you even know what to study?"
+
+--- SCRIPT TABLE ---
+
+[VISUALS / SCREEN RECORDING]                                      [AI VOICEOVER]
+(Show user scrolling aimlessly through books)                     Do you even know what to study?
+(Switch to "Library" -> Click "Syllabus" tab)                     Most students fail because they read the wrong things.
+(Expand "Physics" accordion)                                      Use the Syllabus Tracker on EINTK.
+(Show list of topics: Mechanics, Heat, Waves)                     It breaks down the entire curriculum for you.
+(Click a subtopic, show "Read Book" button appearing)             Pick a topic. It gives you the exact book you need.
+(Click "Read Book", transition to Reader)                         Read it.
+(Go back to Syllabus, show the Green Checkmark appearing)          Finish it. And watch that green checkmark appear.
+(Emoji: ✅ Check Mark)                                            
+(Text Overlay: TRACK YOUR PROGRESS)                               Complete your syllabus today. Click the link below.
+
+--- VOICEOVER ONLY (COPY PASTE) ---
+Do you even know what to study? Most students fail because they read the wrong things. Use the Syllabus Tracker on EINTK. It breaks down the entire curriculum for you. Pick a topic. It gives you the exact book you need. Read it. Finish it. And watch that green checkmark appear. Complete your syllabus today. Click the link below.
+
+
+--------------------------------------------------------------------------------
+VIDEO 6: MAKE LEARNING ADDICTIVE (ARCADE & BADGES)
+--------------------------------------------------------------------------------
+GOAL: Highlight Arcade Games, Points, and Profile/Badges.
+HOOK: "Imagine playing games and passing exams."
+
+--- SCRIPT TABLE ---
+
+[VISUALS / SCREEN RECORDING]                                      [AI VOICEOVER]
+(Show "Arcade" Page with game icons)                              Imagine playing games and passing exams.
+(Click "Flag Master" game)                                        Welcome to the EINTK Arcade.
+(Rapidly click correct flags)                                     Test your brain with Sudoku, Flags, or Hangman.
+(Show "Level Complete! +10 Points" overlay)                       Every win gives you points.
+(Switch to "Profile" page)                                        Every point grows your Knowledge Tree.
+(Show the Tree growing/upgrading)                                 Look at that.
+(Scroll down to "Badges" section, show "Scholar" badge)           Unlock badges and show off to your friends.
+(Text Overlay: PLAY TO LEARN)                                     Learning isn't boring anymore. Visit eintk.vercel.app.
+
+--- VOICEOVER ONLY (COPY PASTE) ---
+Imagine playing games and passing exams. Welcome to the EINTK Arcade. Test your brain with Sudoku, Flags, or Hangman. Every win gives you points. Every point grows your Knowledge Tree. Look at that. Unlock badges and show off to your friends. Learning isn't boring anymore. Visit eintk.vercel.app.
+
+
+--------------------------------------------------------------------------------
+VIDEO 7: YOUR VOICE MATTERS (COMMUNITY & DEBATES)
+--------------------------------------------------------------------------------
+GOAL: Highlight Community Feed, Weekly Debate, and Polls.
+HOOK: "Your opinion actually matters here."
+
+--- SCRIPT TABLE ---
+
+[VISUALS / SCREEN RECORDING]                                      [AI VOICEOVER]
+(Show "Community" feed scrolling)                                 Your opinion actually matters here.
+(Stop at the "Debate of the Week" floating button)                Join the EINTK Community.
+(Click button, show Debate Modal: "Should School Uniforms...")    Vote on the Debate of the Week.
+(Click "I Agree", show the percentage bar shift)                  See what other students in Nigeria are thinking.
+(Scroll down to a Poll in the feed)                               Take quizzes.
+(Click a poll option)                                             Answer polls.
+(Type a comment on a discussion post)                             And drop your own hot takes.
+(Show Leaderboard tab briefly)                                    Get active and get noticed.
+(Text Overlay: JOIN THE CONVERSATION)                             Join the conversation. Click the link below.
+
+--- VOICEOVER ONLY (COPY PASTE) ---
+Your opinion actually matters here. Join the EINTK Community. Vote on the Debate of the Week. See what other students in Nigeria are thinking. Take quizzes. Answer polls. And drop your own hot takes. Get active and get noticed. Join the conversation. Click the link below.
